@@ -221,6 +221,8 @@ END;
 ```sql
 EXEC GetAllEmployees;
 ```
+#### Output of the Stored Procedure
+![GetAllEmployees Output](./image/ProcedurewithoutParameters.png)
 -----
 #### # Create a Stored Procedure with One Parameter
 ```sql
@@ -238,6 +240,9 @@ END;
 ```sql
 EXEC GetEmployeesByDepartment @DepartmentID = 101;
 ```
+#### Output of the Stored Procedure
+![GetEmployeesByDepartment Output](./image/ProcedureWithOneParameters.png)
+
 ----
 #### # Create a Stored Procedure with Two Parameter
 #### Create stored procedure to calculate total salary by department ( Multi Parameters )
@@ -267,3 +272,5 @@ EXEC CalculateTotalSalaryByDepartment
 -- Display the result
 SELECT @Result AS TotalSalary;
 ```
+#### Output of the Stored Procedure
+![CalculateTotalSalaryByDepartment Output](./image/ProcedureWithTwoParameters.png)
