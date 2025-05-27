@@ -206,4 +206,19 @@ INSERT INTO Employees (Name, Salary, DepartmentID) VALUES
 
 
 ```
+#### # Create a Stored Procedure without Parameters
+
+```sql
+CREATE PROCEDURE GetAllEmployees
+AS
+BEGIN
+    SELECT e.EmployeeID, e.Name, e.Salary, d.DepartmentName
+    FROM Employees e
+    INNER JOIN Departments d ON e.DepartmentID = d.DepartmentID;
+END;
+```
+#### How to Execute It 
+```sql
+EXEC GetAllEmployees;
+```
 
