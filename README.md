@@ -151,7 +151,7 @@ EXEC SelectAllCustomers @City = 'London', @PostalCode = 'WA1 1DP';
  -------------
 
  ### Apply Stored Procedure in Practice
- #### Create a Database and Tables
+ #### # Create a Database and Tables
  ```sql
  -- Cerate Database 
 create database TeamworkDB
@@ -221,4 +221,21 @@ END;
 ```sql
 EXEC GetAllEmployees;
 ```
-
+-----
+#### # Create a Stored Procedure with One Parameter
+```sql
+CREATE PROCEDURE GetEmployeesByDepartment
+    @DepartmentID INT
+AS
+BEGIN
+    SELECT e.EmployeeID, e.Name, e.Salary, d.DepartmentName
+    FROM Employees e
+    INNER JOIN Departments d ON e.DepartmentID = d.DepartmentID
+    WHERE e.DepartmentID = @DepartmentID;
+END;
+```
+#### How to Execute It 
+```sql
+EXEC GetEmployeesByDepartment @DepartmentID = 101;
+```
+----
