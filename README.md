@@ -224,7 +224,9 @@ END;
 EXEC GetAllEmployees;
 ```
 #### Output of the Stored Procedure
+
 ![GetAllEmployees Output](./image/ProcedurewithoutParameters.png)
+
 -----
 #### # Create a Stored Procedure with One Parameter
 ```sql
