@@ -644,7 +644,6 @@ select * from dml_log;
 
 **Step 1: Create a server-level log table**
 ```sql
-
 USE master;
 GO
 CREATE TABLE login_log (
@@ -654,4 +653,41 @@ CREATE TABLE login_log (
     AppName     NVARCHAR(100)
 );
 ```
+**Step 2: Create the logon trigger**
+```sql
 
+CREATE TRIGGER trg_logon
+ON ALL SERVER
+FOR LOGON
+AS
+BEGIN
+    INSERT INTO master.dbo.login_log (LoginName, HostName, AppName)
+    VALUES (
+        ORIGINAL_LOGIN(),
+        HOST_NAME(),
+        APP_NAME()
+    );
+END;
+```
+
+**Step 3: Check Execution of LOGON Trigger**
+```sql
+
+- to check if the trigger enable or not
+SELECT name, is_disabled
+FROM sys.server_triggers
+WHERE name = 'trg_logon';
+```
+![Check Execution of LOGON Trigger](./image/logon_toCheck.png)
+
+```sql
+-- makeing the trigger enable
+ENABLE TRIGGER trg_logon ON ALL SERVER;
+
+-- to display trg_logon
+USE master;
+GO
+SELECT * FROM login_log ORDER BY LoginTime DESC;
+
+```
+![Check Execution of LOGON Trigger](./image/logon_toDisplay.png)
