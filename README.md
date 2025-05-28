@@ -491,16 +491,19 @@ END;
 
  ## Apply Trigger in Practice
 
+ Create database
  ```sql
  -- Create database
 Create database TriggerDB
 -- USE Database
 USE TriggerDB
 
+ ```
 
--- 1. DDL Trigger: CREATE, ALTER, DROP TABLE
--- Step 1: Create a log table
+**1. DDL Trigger: CREATE, ALTER, DROP TABLE**
 
+**Step 1: Create a log table**
+  ```sql
 CREATE TABLE ddl_log (
     EventType      NVARCHAR(100),
     ObjectName     NVARCHAR(256),
@@ -508,8 +511,9 @@ CREATE TABLE ddl_log (
     EventTime      DATETIME DEFAULT GETDATE(),
     LoginName      NVARCHAR(100)
 );
-
-
+```
+**Step 2: Create the DDL trigger**
+```sql
 CREATE TRIGGER trg_ddl_table_events
 ON DATABASE
 FOR CREATE_TABLE, ALTER_TABLE, DROP_TABLE
@@ -525,9 +529,5 @@ BEGIN
         @EventData.value('(/EVENT_INSTANCE/LoginName)[1]', 'NVARCHAR(100)')
     );
 END;
-
-
-
-
-
 ```
+
