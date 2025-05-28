@@ -553,7 +553,6 @@ select * from ddl_log;
 **2. DML Trigger: INSERT, UPDATE, DELETE**
 **Step 1: Create a table to track employee activity**
 ```sql
-
 CREATE TABLE employees (
     emp_id INT PRIMARY KEY,
     name NVARCHAR(100),
@@ -562,5 +561,14 @@ CREATE TABLE employees (
 );
 
 INSERT INTO employees VALUES (1, 'Alice', 'Manager', 7000.00);
+```
+**Step 2: Create DML log table**
 
+```sql
+CREATE TABLE dml_log (
+    ActionType   NVARCHAR(10),
+    EmpID        INT,
+    ActionTime   DATETIME DEFAULT GETDATE(),
+    PerformedBy  NVARCHAR(100)
+);
 ```
