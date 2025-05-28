@@ -589,7 +589,7 @@ BEGIN
     FROM inserted;
 END;
 ```
-![Insert Trigger Output](./image/dml_insert.png)
+
 
 **Update Trigger**
 ```sql
@@ -604,7 +604,6 @@ BEGIN
 END;
 ```
 
-![Update Trigger Output](./image/dml_update.png)
 
 **Delete Trigger**
 ```sql
@@ -619,7 +618,7 @@ BEGIN
     FROM deleted;
 END;
 ```
-![Delete Trigger Output](./image/dml_delete.png)
+
 
 
 **Step 3: Modifying the employee table to run the terigger MDL**
@@ -630,4 +629,14 @@ Update employees set name = 'Rahma' where emp_id =2
 Update employees set name = 'Amani' where emp_id =1
 delete from employees where emp_id =3
 ```
+
+**Step 4: Check Execution of DML Trigger**
+```sql
+select * from dml_log;
+```
+**Output of DML Trigger**
+
+![Insert Trigger Output](./image/dml_insert.png)
+![Update Trigger Output](./image/dml_update.png)
+![Delete Trigger Output](./image/dml_delete.png)
 
