@@ -452,7 +452,7 @@ The trigger checks if the inserted grade is valid. If not, it throws an error an
 
 ### INSTEAD , BEFORE and AFTER Triggers
 
-**INSTEAD OF Trigger**
+**INSTEAD Trigger**
 to take alternative actions before the update happens.
 
 **Some of the uses of instead of trigger's are:**
@@ -463,4 +463,12 @@ to take alternative actions before the update happens.
 3. To implement cascading deletes. For instance you want to delete a customer record. 
 
 
+**AFTER Trigger**
+is useful when you want to execute trigger logic after the data has been updated.
+
+**Some of the uses of after trigger's are:**
+1. For recording Audit trail where you want new and old values to be inserted in to audit table.
+2. Updating values after the update has happened. 
+
+![sql Inseted after trigger](./image/sql_Inseted_after_trigger.png)
 
