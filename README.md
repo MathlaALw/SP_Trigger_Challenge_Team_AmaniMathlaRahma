@@ -605,3 +605,18 @@ END;
 ```
 
 ![Update Trigger Output](./image/dml_update.png)
+
+**Delete Trigger**
+```sql
+
+CREATE TRIGGER trg_employees_delete
+ON employees
+AFTER DELETE
+AS
+BEGIN
+    INSERT INTO dml_log (ActionType, EmpID, PerformedBy)
+    SELECT 'DELETE', emp_id, SYSTEM_USER
+    FROM deleted;
+END;
+```
+![Delete Trigger Output](./image/dml_delete.png)
