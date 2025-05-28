@@ -472,3 +472,5 @@ is useful when you want to execute trigger logic after the data has been updated
 
 ![sql Inseted after trigger](./image/sql_Inseted_after_trigger.png)
 
+**BEFORE Trigger**
+These run before the action (INSERT, UPDATE, DELETE) is executed. They’re great for data validation or modifying values before they are committed to the database.
