@@ -640,3 +640,18 @@ select * from dml_log;
 ![Update Trigger Output](./image/dml_update.png)
 ![Delete Trigger Output](./image/dml_delete.png)
 
+**3. Logon Trigger**
+
+**Step 1: Create a server-level log table**
+```sql
+
+USE master;
+GO
+CREATE TABLE login_log (
+    LoginTime   DATETIME DEFAULT GETDATE(),
+    LoginName   NVARCHAR(100),
+    HostName    NVARCHAR(100),
+    AppName     NVARCHAR(100)
+);
+```
+
