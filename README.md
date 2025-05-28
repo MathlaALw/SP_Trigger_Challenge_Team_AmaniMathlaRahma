@@ -1,6 +1,7 @@
-# SP_Trigger_Challenge_Team_AmaniMathlaRahma
 
-
+# Stored Procedures and Triggers
+---
+## Stored Procedures
 ### What is Stored Procedures?
  - A stored procedure is a precompiled collection of one or more SQL statements stored in the database. It can be executed multiple times with different parameters, allowing for efficient reuse of logic, reduced duplication, and better performance.
  - Stored procedures support input parameters, allow encapsulation of logic, and can perform a wide range of operations like data manipulation, validation, transactions, and reporting.
@@ -45,9 +46,6 @@ Using EXECUTE AS can impersonate specific users and protect sensitive data.
 	Writing efficient procedures may require skilled DBAs or SQL developers.
 
  ### Type of Stored Procedures
-
- - **System Stored Procedures:**
-	- 
 
 - **User-defined:**
 A user-defined procedure can be created in a user-defined database or in all system databases except the Resource database. The procedure can be developed in either Transact-SQL, or as a reference to a Microsoft .NET Framework common runtime language (CLR) method.
@@ -278,3 +276,13 @@ SELECT @Result AS TotalSalary;
 ```
 #### Output of the Stored Procedure
 ![CalculateTotalSalaryByDepartment Output](./image/ProcedureWithTwoParameters.png)
+
+
+--------------------------------------------
+## Triggers
+
+### What is Trigger?
+
+A trigger is a stored procedure in a database that automatically invokes whenever a special event in the database occurs. By using SQL triggers, developers can automate tasks, ensure data consistency, and keep accurate records of database activities. For example, a trigger can be invoked when a row is inserted into a specified table or when specific table columns are updated.
+ 
+ 
