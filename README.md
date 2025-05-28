@@ -541,3 +541,10 @@ CREATE TABLE employees (
 INSERT INTO employees VALUES (1, 'Alice', 'Manager', 7000.00);
 ```
 
+
+**Step 4: Check Execution of DDL Trigger**
+```sql
+select * from ddl_log;
+```
+
+![DDL Trigger Output](./image/CheckExecutionOfDDLTrigger.png)
