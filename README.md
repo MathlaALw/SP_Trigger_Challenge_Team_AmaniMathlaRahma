@@ -449,3 +449,18 @@ The trigger checks if the inserted grade is valid. If not, it throws an error an
 
 
 --------------
+
+### INSTEAD , BEFORE and AFTER Triggers
+
+**INSTEAD OF Trigger**
+to take alternative actions before the update happens.
+
+**Some of the uses of instead of trigger's are:**
+
+
+1. Reject updates which are not valid.
+2. Take some alternative action if any error occurs.
+3. To implement cascading deletes. For instance you want to delete a customer record. 
+
+
+
