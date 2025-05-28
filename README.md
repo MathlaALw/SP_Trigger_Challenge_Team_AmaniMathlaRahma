@@ -1,6 +1,10 @@
 
 # Stored Procedures and Triggers
 ---
+Requierment File  ->
+[Team Challenge: Mastering Stored Procedures & Triggers](./pdf/StoredProcedures_Triggers.pdf) :D
+
+---
 ## Stored Procedures
 ### What is Stored Procedures?
  - A stored procedure is a precompiled collection of one or more SQL statements stored in the database. It can be executed multiple times with different parameters, allowing for efficient reuse of logic, reduced duplication, and better performance.
