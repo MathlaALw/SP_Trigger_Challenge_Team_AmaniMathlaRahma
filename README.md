@@ -589,6 +589,7 @@ BEGIN
     FROM inserted;
 END;
 ```
+![Insert Trigger Output](./image/dml_insert.png)
 
 **Update Trigger**
 ```sql
@@ -603,4 +604,4 @@ BEGIN
 END;
 ```
 
-
+![Update Trigger Output](./image/dml_update.png)
